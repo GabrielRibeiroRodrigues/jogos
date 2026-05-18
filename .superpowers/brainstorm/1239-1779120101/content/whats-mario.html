@@ -1,0 +1,51 @@
+<h2>Elementos que ainda parecem Mario</h2>
+<p class="subtitle">Yasmin, Bruno e Tiago já estão customizados. Estes 4 elementos ainda têm visual de Super Mario:</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px;">
+
+  <div style="background:#1a1a2e;border-radius:8px;padding:16px;border:2px solid #e74c3c;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+      <div style="width:32px;height:32px;background:#FFD700;border:2px solid #B8860B;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:18px;color:#8B4513;border-radius:3px;">?</div>
+      <h3 style="margin:0;color:#e74c3c;">CoinBox (Bloco ?)</h3>
+    </div>
+    <p style="color:#aaa;margin:0;font-size:13px;">O bloco amarelo com "?" é o símbolo mais icônico do Mario. 3 frames de animação em <code>tiles.png</code>.</p>
+  </div>
+
+  <div style="background:#1a1a2e;border-radius:8px;padding:16px;border:2px solid #e74c3c;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+      <div style="width:32px;height:32px;background:#FFD700;border-radius:50%;border:2px solid #B8860B;"></div>
+      <h3 style="margin:0;color:#e74c3c;">Moeda (Coin)</h3>
+    </div>
+    <p style="color:#aaa;margin:0;font-size:13px;">A moeda dourada redonda é clássico Mario. 3 frames em <code>tiles.png</code> + 4 frames em <code>Items.png</code> (quando sai do bloco).</p>
+  </div>
+
+  <div style="background:#1a1a2e;border-radius:8px;padding:16px;border:2px solid #f39c12;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+      <div style="width:32px;height:32px;background:#cd6155;border:2px solid #922b21;display:grid;grid-template-columns:1fr 1fr;gap:1px;padding:2px;">
+        <div style="background:#e8d5b7;border:1px solid #922b21;"></div>
+        <div style="background:#e8d5b7;border:1px solid #922b21;"></div>
+        <div style="background:#e8d5b7;border:1px solid #922b21;"></div>
+        <div style="background:#e8d5b7;border:1px solid #922b21;"></div>
+      </div>
+      <h3 style="margin:0;color:#f39c12;">Tijolos (Bricks)</h3>
+    </div>
+    <p style="color:#aaa;margin:0;font-size:13px;">O tijolo vermelho/marrom com padrão é visual de Mario. 1 tile em <code>tiles.png</code>.</p>
+  </div>
+
+  <div style="background:#1a1a2e;border-radius:8px;padding:16px;border:2px solid #f39c12;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+      <div style="width:32px;height:32px;background:#e74c3c;border-radius:50%;border:3px solid #7b241c;position:relative;">
+        <div style="position:absolute;top:3px;left:6px;width:8px;height:5px;background:white;border-radius:50%;opacity:0.7;"></div>
+        <div style="position:absolute;top:3px;right:3px;width:4px;height:4px;background:white;border-radius:50%;opacity:0.7;"></div>
+      </div>
+      <h3 style="margin:0;color:#f39c12;">Cogumelo (Power-up)</h3>
+    </div>
+    <p style="color:#aaa;margin:0;font-size:13px;">O cogumelo vermelho com pintas brancas é o power-up clássico do Mario. 1 sprite em <code>Items.png</code>.</p>
+  </div>
+
+</div>
+
+<div style="margin-top:24px;background:#0d1117;border-radius:8px;padding:16px;border:1px solid #30363d;">
+  <h3 style="color:#58a6ff;margin:0 0 8px;">Plano de substituição</h3>
+  <p style="color:#8b949e;margin:0;font-size:13px;">Vou gerar novos sprites em pixel art via Python (Pillow) diretamente nos arquivos <code>tiles.png</code> e <code>Items.png</code>, mantendo o chão, céu, nuvens e arbustos. Próxima pergunta: qual estilo para os substitutos?</p>
+</div>

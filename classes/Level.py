@@ -5,11 +5,12 @@ from classes.Sprites import Sprites
 from classes.Tile import Tile
 from entities.Coin import Coin
 from entities.CoinBrick import CoinBrick
-from entities.Goomba import Goomba
+from entities.Bruno import Bruno
 from entities.Mushroom import RedMushroom
-from entities.Koopa import Koopa
+from entities.Tiago import Tiago
 from entities.CoinBox import CoinBox
 from entities.RandomBox import RandomBox
+from entities.MovingPlatform import MovingPlatform
 
 
 class Level:
@@ -21,6 +22,10 @@ class Level:
         self.level = None
         self.levelLength = 0
         self.entityList = []
+        self.background = pygame.image.load("./img/background.png").convert()
+        self.bgWidth = self.background.get_width()
+        self.hasEndPortal = False
+        self.endPortalRect = None
 
     def loadLevel(self, levelname):
         with open("./levels/{}.json".format(levelname)) as jsonData:
@@ -41,6 +46,20 @@ class Level:
         except:
             # if no entities in Level
             pass
+        if "MovingPlatform" in data.get("level", {}).get("entities", {}):
+            for platform in data["level"]["entities"]["MovingPlatform"]:
+                # platform = [x, y, direction, amplitude, speed]
+                self.entityList.append(MovingPlatform(
+                    platform[0], platform[1], self, self.screen,
+                    platform[2], platform[3], platform[4]
+                ))
+        try:
+            for x, y in data["level"]["entities"]["EndPortal"]:
+                self.endPortalRect = pygame.Rect(x * 32, y * 32, 64, 64)
+                self.hasEndPortal = True
+        except:
+            self.hasEndPortal = False
+            self.endPortalRect = None
 
     def loadLayers(self, data):
         layers = []
@@ -53,7 +72,9 @@ class Level:
                         ]
                         + [
                             Tile(
-                                self.sprites.spriteCollection.get("ground"),
+                                self.sprites.spriteCollection.get(
+                                    "ground" if y == data["level"]["layers"]["ground"]["y"][0] else "ground_dirt"
+                                ),
                                 pygame.Rect(x * 32, (y - 1) * 32, 32, 32),
                             )
                             for y in range(*data["level"]["layers"]["ground"]["y"])
@@ -78,58 +99,95 @@ class Level:
             )
 
     def updateEntities(self, cam):
+        player = cam.entity
         for entity in self.entityList:
             entity.update(cam)
             if entity.alive is None:
                 self.entityList.remove(entity)
+            # Moving platform player collision: player stands on top
+            if isinstance(entity, MovingPlatform) and entity.alive:
+                platform = entity
+                if player.rect.colliderect(platform.rect):
+                    # Check if player is coming from above (player bottom overlaps platform top)
+                    player_bottom = player.rect.bottom
+                    platform_top = platform.rect.top
+                    # Player was above or at platform top and is now overlapping
+                    if player.vel.y >= 0 and player_bottom >= platform_top and player_bottom <= platform.rect.bottom:
+                        # Snap player to platform top
+                        player.rect.bottom = platform_top
+                        player.vel.y = 0
+                        player.onGround = True
+                        # Move player horizontally with platform
+                        if platform.direction == "horizontal":
+                            player.rect.x += platform.vel
+                        else:
+                            player.rect.y += platform.vel
+
+    def checkEndPortal(self, yasminRect):
+        if not self.hasEndPortal or self.endPortalRect is None:
+            return False
+        return yasminRect.colliderect(self.endPortalRect)
+
+    def drawBackground(self, camera):
+        offset_x = int(camera.pos.x * 32 * 0.3) % self.bgWidth
+        self.screen.blit(self.background, (-offset_x, 0))
+        self.screen.blit(self.background, (self.bgWidth - offset_x, 0))
 
     def drawLevel(self, camera):
+        sky_sprite = self.sprites.spriteCollection.get("sky")
         try:
+            self.drawBackground(camera)
             for y in range(0, 15):
                 for x in range(0 - int(camera.pos.x + 1), 20 - int(camera.pos.x - 1)):
-                    if self.level[y][x].sprite is not None:
-                        if self.level[y][x].sprite.redrawBackground:
-                            self.screen.blit(
-                                self.sprites.spriteCollection.get("sky").image,
-                                ((x + camera.pos.x) * 32, y * 32),
-                            )
-                        self.level[y][x].sprite.drawSprite(
-                            x + camera.pos.x, y, self.screen
-                        )
+                    if self.level[y][x].sprite is None:
+                        continue
+                    if self.level[y][x].sprite is sky_sprite:
+                        continue
+                    self.level[y][x].sprite.drawSprite(
+                        x + camera.pos.x, y, self.screen
+                    )
             self.updateEntities(camera)
+            if self.hasEndPortal and self.endPortalRect:
+                drawRect = pygame.Rect(
+                    self.endPortalRect.x + camera.x,
+                    self.endPortalRect.y,
+                    self.endPortalRect.width,
+                    self.endPortalRect.height
+                )
+                pygame.draw.rect(self.screen, (0, 255, 100), drawRect, 3)
+                inner = drawRect.inflate(-6, -6)
+                pygame.draw.rect(self.screen, (0, 180, 70), inner, 2)
         except IndexError:
             return
 
     def addCloudSprite(self, x, y):
-        try:
-            for yOff in range(0, 2):
-                for xOff in range(0, 3):
-                    self.level[y + yOff][x + xOff] = Tile(
-                        self.sprites.spriteCollection.get("cloud{}_{}".format(yOff + 1, xOff + 1)), None, )
-        except IndexError:
-            return
+        return
 
     def addPipeSprite(self, x, y, length=2):
+        portal_top = 12  # portal occupies rows 12-13, sitting on ground at row 14
         try:
-            # add pipe head
-            self.level[y][x] = Tile(
-                self.sprites.spriteCollection.get("pipeL"),
-                pygame.Rect(x * 32, y * 32, 32, 32),
+            # invisible collision above the portal
+            for i in range(y, portal_top):
+                self.level[i][x] = Tile(None, pygame.Rect(x * 32, i * 32, 32, 32))
+                self.level[i][x + 1] = Tile(None, pygame.Rect((x + 1) * 32, i * 32, 32, 32))
+            # portal top row
+            self.level[portal_top][x] = Tile(
+                self.sprites.spriteCollection.get("portal_tl"),
+                pygame.Rect(x * 32, portal_top * 32, 32, 32),
             )
-            self.level[y][x + 1] = Tile(
-                self.sprites.spriteCollection.get("pipeR"),
-                pygame.Rect((x + 1) * 32, y * 32, 32, 32),
+            self.level[portal_top][x + 1] = Tile(
+                self.sprites.spriteCollection.get("portal_tr"),
+                pygame.Rect((x + 1) * 32, portal_top * 32, 32, 32),
             )
-            # add pipe body
-            for i in range(1, length + 20):
-                self.level[y + i][x] = Tile(
-                    self.sprites.spriteCollection.get("pipe2L"),
-                    pygame.Rect(x * 32, (y + i) * 32, 32, 32),
-                )
-                self.level[y + i][x + 1] = Tile(
-                    self.sprites.spriteCollection.get("pipe2R"),
-                    pygame.Rect((x + 1) * 32, (y + i) * 32, 32, 32),
-                )
+            # portal bottom row (row 13, sits on ground at row 14)
+            self.level[portal_top + 1][x] = Tile(
+                self.sprites.spriteCollection.get("portal_bl"),
+                pygame.Rect(x * 32, (portal_top + 1) * 32, 32, 32),
+            )
+            self.level[portal_top + 1][x + 1] = Tile(
+                self.sprites.spriteCollection.get("portal_br"),
+                pygame.Rect((x + 1) * 32, (portal_top + 1) * 32, 32, 32),
+            )
         except IndexError:
             return
 
@@ -191,12 +249,12 @@ class Level:
 
     def addGoomba(self, x, y):
         self.entityList.append(
-            Goomba(self.screen, self.sprites.spriteCollection, x, y, self, self.sound)
+            Bruno(self.screen, self.sprites.spriteCollection, x, y, self, self.sound)
         )
 
     def addKoopa(self, x, y):
         self.entityList.append(
-            Koopa(self.screen, self.sprites.spriteCollection, x, y, self, self.sound)
+            Tiago(self.screen, self.sprites.spriteCollection, x, y, self, self.sound)
         )
 
     def addRedMushroom(self, x, y):

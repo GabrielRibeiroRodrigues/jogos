@@ -1,0 +1,165 @@
+- generic [ref=e1]:
+  - link [ref=e99] [cursor=pointer]:
+    - /url: https://kenney.itch.io/kenney-game-assets
+    - img [ref=e3]
+    - text: Get Kenney Game Assets All-in-1 to download
+    - emphasis [ref=e4]: everything
+    - text: at once, plus free updates!
+  - generic [ref=e6]:
+    - listitem [ref=e7]:
+      - link [ref=e8] [cursor=pointer]:
+        - /url: https://kenney.nl
+        - img [ref=e9]
+    - listitem [ref=e10]:
+      - link [ref=e100] [cursor=pointer]:
+        - /url: https://kenney.nl/games
+        - text: Games
+    - listitem [ref=e12]:
+      - link [ref=e101] [cursor=pointer]:
+        - /url: https://kenney.nl/tools
+        - text: Tools
+    - listitem [ref=e14]:
+      - link [ref=e102] [cursor=pointer]:
+        - /url: https://kenney.nl/assets
+        - text: Assets
+    - listitem [ref=e16]:
+      - link [ref=e103] [cursor=pointer]:
+        - /url: https://kenney.nl/starter-kits
+        - text: Starter Kits
+    - listitem [ref=e18]:
+      - link [ref=e19] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e20]
+    - listitem [ref=e21]:
+      - link [ref=e104] [cursor=pointer]:
+        - /url: https://kenney.nl/donate
+        - text: Donate
+    - link [ref=e105] [cursor=pointer]:
+      - /url: javascript:void(0)
+      - text: ×
+    - link [ref=e106] [cursor=pointer]:
+      - /url: https://kenney.nl/games
+      - text: Games
+    - link [ref=e107] [cursor=pointer]:
+      - /url: https://kenney.nl/tools
+      - text: Tools
+    - link [ref=e108] [cursor=pointer]:
+      - /url: https://kenney.nl/assets
+      - text: Assets
+    - link [ref=e109] [cursor=pointer]:
+      - /url: https://kenney.nl/starter-kits
+      - text: Starter Kits
+    - separator [ref=e28]
+    - link [ref=e110] [cursor=pointer]:
+      - /url: https://kenney.nl/support
+      - text: Support
+    - link [ref=e111] [cursor=pointer]:
+      - /url: https://kenney.nl/knowledge-base
+      - text: Knowledge Base
+    - link [ref=e112] [cursor=pointer]:
+      - /url: https://kenney.nl/donate
+      - text: Donate
+    - separator [ref=e32]
+    - link [ref=e33] [cursor=pointer]:
+      - /url: "#"
+      - img [ref=e34]
+  - generic [ref=e38]:
+    - generic [ref=e39]:
+      - heading [level=1] [ref=e113]: Tiny Dungeon
+      - table [ref=e41]:
+        - rowgroup [ref=e42]:
+          - row [ref=e114]:
+            - cell [ref=e115]: Tags
+            - cell [ref=e116]:
+              - link [ref=e117] [cursor=pointer]:
+                - /url: https://kenney.nl/assets/tag:rpg
+                - text: rpg
+              - link [ref=e118] [cursor=pointer]:
+                - /url: https://kenney.nl/assets/tag:roguelike
+                - text: roguelike
+              - link [ref=e119] [cursor=pointer]:
+                - /url: https://kenney.nl/assets/tag:dungeon
+                - text: dungeon
+              - link [ref=e120] [cursor=pointer]:
+                - /url: https://kenney.nl/assets/tag:sewer
+                - text: sewer
+              - link [ref=e121] [cursor=pointer]:
+                - /url: https://kenney.nl/assets/tag:pixel
+                - text: pixel
+          - row [ref=e122]:
+            - cell [ref=e123]: Category
+            - cell [ref=e124]:
+              - link [ref=e125] [cursor=pointer]:
+                - /url: https://kenney.nl/assets/category:2D
+                - text: 2D
+              - text: •
+              - link [ref=e126] [cursor=pointer]:
+                - /url: https://kenney.nl/assets/series:Tiny
+                - text: Tiny
+          - row [ref=e127]:
+            - cell [ref=e128]: Tile size
+            - cell [ref=e129]:
+              - link [ref=e130] [cursor=pointer]:
+                - /url: https://kenney.nl/assets/size:16
+                - text: 16 × 16
+          - row [ref=e131]:
+            - cell [ref=e132]: Files
+            - cell [ref=e133]: 130×
+          - row [ref=e134]:
+            - cell [ref=e135]: License
+            - cell [ref=e136]:
+              - link [ref=e137] [cursor=pointer]:
+                - /url: https://creativecommons.org/publicdomain/zero/1.0/
+                - text: Creative Commons CC0
+      - paragraph [ref=e67]:
+        - link [ref=e138] [cursor=pointer]:
+          - /url: "#inline-download"
+          - text: Download
+        - link [ref=e139] [cursor=pointer]:
+          - /url: https://kenney.itch.io/kenney-game-assets
+          - text: Get All-in-1 bundle
+      - table [ref=e70]:
+        - rowgroup [ref=e71]:
+          - row [ref=e140]:
+            - cell [ref=e141]:
+              - generic [ref=e74]: "1.0"
+      - generic [ref=e75]:
+        - heading [level=2] [ref=e142]: As seen in
+        - paragraph [ref=e77]: Contact Kenney on socials to get your game featured
+        - link [ref=e80] [cursor=pointer]:
+          - /url: https://store.steampowered.com/app/2998990
+          - img [ref=e81]
+    - generic [ref=e82]:
+      - link [ref=e85] [cursor=pointer]:
+        - /url: https://kenney.nl/media/pages/assets/tiny-dungeon/3bb70bd831-1674742409/preview.png
+        - img [ref=e86]
+      - link [ref=e89] [cursor=pointer]:
+        - /url: https://kenney.nl/media/pages/assets/tiny-dungeon/8c4f705db0-1674742412/sample.png
+  - contentinfo [ref=e90]:
+    - generic [ref=e92]: Copyright © 2010 - 2026 · All rights reserved
+    - generic [ref=e94]:
+      - link [ref=e143] [cursor=pointer]:
+        - /url: https://kenney.nl/support
+        - text: Support
+      - link [ref=e144] [cursor=pointer]:
+        - /url: https://kenney.nl/knowledge-base
+        - text: Knowledge Base
+      - link [ref=e145] [cursor=pointer]:
+        - /url: https://kenney.nl/privacy-policy
+        - text: Privacy Policy
+      - link [ref=e146] [cursor=pointer]:
+        - /url: https://kenney.nl/terms-of-service
+        - text: Terms of Service
+  - dialog "Dialog Window (Press escape to close)" [active] [ref=e147]:
+    - document [ref=e148]:
+      - generic [ref=e149]:
+        - generic [ref=e154]:
+          - heading "Consider a donation" [level=1] [ref=e155]
+          - paragraph [ref=e156]: The game assets you're about to download are available for free, thanks to the generosity of our amazing community. If you'd like to support and help keep them free for everyone, consider making a small donation!
+          - paragraph [ref=e157]:
+            - link "Donate" [ref=e158] [cursor=pointer]:
+              - /url: https://kenney.nl/donate
+          - paragraph [ref=e159]:
+            - link "Continue without donating..." [ref=e160] [cursor=pointer]:
+              - /url: https://kenney.nl/media/pages/assets/tiny-dungeon/f8422efb44-1674742415/kenney_tiny-dungeon.zip
+        - button "Close (Press escape to close)" [ref=e161] [cursor=pointer]: ×

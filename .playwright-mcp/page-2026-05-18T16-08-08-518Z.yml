@@ -1,0 +1,309 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - generic [ref=e11]: OpenID
+          - textbox "OpenID" [ref=e12]
+        - generic [ref=e13]:
+          - generic [ref=e14]: Username or e-mail
+          - textbox "Username or e-mail" [ref=e15]
+        - generic [ref=e16]:
+          - generic [ref=e17]: Password
+          - textbox "Password" [ref=e18]
+        - button "Log in" [ref=e20]
+      - link "Register" [ref=e23] [cursor=pointer]:
+        - /url: "#"
+    - link [ref=e24] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e25]:
+      - list [ref=e30]:
+        - listitem [ref=e31]:
+          - link "Home" [ref=e32] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e33]:
+          - link "Browse" [ref=e34] [cursor=pointer]:
+            - /url: /latest
+        - listitem [ref=e35]:
+          - link "Submit Art" [ref=e36] [cursor=pointer]:
+            - /url: /node/add/art
+        - listitem [ref=e37]:
+          - link "Collect" [ref=e38] [cursor=pointer]:
+            - /url: /collections
+        - listitem [ref=e39]:
+          - link "Forums" [ref=e40] [cursor=pointer]:
+            - /url: /forums/art-discussion
+        - listitem [ref=e41]:
+          - link "FAQ" [ref=e42] [cursor=pointer]:
+            - /url: /content/faq
+        - listitem [ref=e43]:
+          - link "Leaderboards" [ref=e44] [cursor=pointer]:
+            - /url: /leaderboards/total
+        - listitem [ref=e45]:
+          - link "❤ Donate" [ref=e46] [cursor=pointer]:
+            - /url: https://www.patreon.com/opengameart
+      - generic [ref=e54]:
+        - textbox "Search" [ref=e58]
+        - button "Search" [ref=e60]
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - heading "Chat with us!" [level=2] [ref=e65]
+            - generic [ref=e66]:
+              - paragraph [ref=e67]:
+                - strong [ref=e68]: "Discord:"
+                - link "OpenGameArt" [ref=e69] [cursor=pointer]:
+                  - /url: https://discord.gg/yDaQ4NcCux
+                - link "discord.gg/yDaQ4NcCux" [ref=e70] [cursor=pointer]:
+                  - /url: https://discord.gg/yDaQ4NcCux
+              - paragraph [ref=e71]:
+                - strong [ref=e72]: "IRC:"
+                - link "#OpenGameArt" [ref=e73] [cursor=pointer]:
+                  - /url: https://freegamedev.net/irc/#opengameart
+                - text: "on"
+                - link "freegamedev.net/irc/#opengameart" [ref=e74] [cursor=pointer]:
+                  - /url: https://freegamedev.net/irc/#opengameart
+          - generic [ref=e75]:
+            - heading "Active Forum Topics - (view more)" [level=2] [ref=e76]:
+              - text: Active Forum Topics - (
+              - link "view more" [ref=e77] [cursor=pointer]:
+                - /url: /forum
+              - text: )
+            - generic [ref=e79]:
+              - list [ref=e82]:
+                - listitem [ref=e83]:
+                  - link "Sharing My Music and Sound FX - Over 2500 Tracks" [ref=e86] [cursor=pointer]:
+                    - /url: /forumtopic/sharing-my-music-and-sound-fx-over-2500-tracks#comment-112231
+                  - generic [ref=e88]:
+                    - emphasis [ref=e89]: 4 days 15 hours
+                    - text: ago
+                  - generic [ref=e90]:
+                    - text: by
+                    - link "Eric Matyas" [ref=e92] [cursor=pointer]:
+                      - /url: /users/eric-matyas
+                - listitem [ref=e93]:
+                  - link "Change Username Requests" [ref=e96] [cursor=pointer]:
+                    - /url: /forumtopic/change-username-requests#comment-112228
+                  - generic [ref=e98]:
+                    - emphasis [ref=e99]: 5 days 4 hours
+                    - text: ago
+                  - generic [ref=e100]:
+                    - text: by
+                    - link "IndigoExile" [ref=e102] [cursor=pointer]:
+                      - /url: /users/indigoexile
+                - listitem [ref=e103]:
+                  - link "New here - question about submitting art" [ref=e106] [cursor=pointer]:
+                    - /url: /forumtopic/new-here-question-about-submitting-art#comment-112173
+                  - generic [ref=e108]:
+                    - emphasis [ref=e109]: 1 week 2 days
+                    - text: ago
+                  - generic [ref=e110]:
+                    - text: by
+                    - link "deanortori" [ref=e112] [cursor=pointer]:
+                      - /url: /users/deanortori
+                - listitem [ref=e113]:
+                  - 'link "MHAS Dungeon Sweeper : mix between mineSweeper and rogue like" [ref=e116] [cursor=pointer]':
+                    - /url: /forumtopic/mhas-dungeon-sweeper-mix-between-minesweeper-and-rogue-like#comment-112156
+                  - generic [ref=e118]:
+                    - emphasis [ref=e119]: 1 week 4 days
+                    - text: ago
+                  - generic [ref=e120]:
+                    - text: by
+                    - link "tchevin" [ref=e122] [cursor=pointer]:
+                      - /url: /users/tchevin
+                - listitem [ref=e123]:
+                  - link "Bring The Rift on Steam Demo" [ref=e126] [cursor=pointer]:
+                    - /url: /forumtopic/bring-the-rift-on-steam-demo#comment-
+                  - generic [ref=e128]:
+                    - emphasis [ref=e129]: 1 week 5 days
+                    - text: ago
+                  - generic [ref=e130]:
+                    - text: by
+                    - link "ShiroDev" [ref=e132] [cursor=pointer]:
+                      - /url: /users/shirodev
+                - listitem [ref=e133]:
+                  - link "Blender procedural topology bridge" [ref=e136] [cursor=pointer]:
+                    - /url: /forumtopic/blender-procedural-topology-bridge#comment-
+                  - generic [ref=e138]:
+                    - emphasis [ref=e139]: 2 weeks 4 days
+                    - text: ago
+                  - generic [ref=e140]:
+                    - text: by
+                    - link "DREAM_SEARCH_REPEAT" [ref=e142] [cursor=pointer]:
+                      - /url: /users/dreamsearchrepeat
+                - listitem [ref=e143]:
+                  - link "My second Game/App ever" [ref=e146] [cursor=pointer]:
+                    - /url: /forumtopic/my-second-gameapp-ever#comment-
+                  - generic [ref=e148]:
+                    - emphasis [ref=e149]: 2 weeks 5 days
+                    - text: ago
+                  - generic [ref=e150]:
+                    - text: by
+                    - link "Cameron" [ref=e152] [cursor=pointer]:
+                      - /url: /users/cameron
+                - listitem [ref=e153]:
+                  - link "new pixel artist sharing my pack" [ref=e156] [cursor=pointer]:
+                    - /url: /forumtopic/new-pixel-artist-sharing-my-pack#comment-
+                  - generic [ref=e158]:
+                    - emphasis [ref=e159]: 3 weeks 2 days
+                    - text: ago
+                  - generic [ref=e160]:
+                    - text: by
+                    - link "archyman" [ref=e162] [cursor=pointer]:
+                      - /url: /users/archyman
+              - link "Subscribe to Active Forum Topics" [ref=e164] [cursor=pointer]:
+                - /url: https://opengameart.org/active-forum-topics.xml
+                - img "Subscribe to Active Forum Topics" [ref=e165]
+          - generic [ref=e166]:
+            - heading "Recent Comments - (view more)" [level=2] [ref=e167]:
+              - text: Recent Comments - (
+              - link "view more" [ref=e168] [cursor=pointer]:
+                - /url: /comments/recent
+              - text: )
+            - generic [ref=e170]:
+              - list [ref=e173]:
+                - listitem [ref=e174]:
+                  - generic [ref=e176]:
+                    - link "Re:" [ref=e177] [cursor=pointer]:
+                      - /url: /content/64px-portraits#comment-112276
+                    - link "64px portraits" [ref=e178] [cursor=pointer]:
+                      - /url: /content/64px-portraits
+                  - generic [ref=e179]:
+                    - text: by
+                    - link "rustycanon" [ref=e181] [cursor=pointer]:
+                      - /url: /users/rustycanon
+                - listitem [ref=e182]:
+                  - generic [ref=e184]:
+                    - link "Re:" [ref=e185] [cursor=pointer]:
+                      - /url: /content/cute-monsters#comment-112275
+                    - link "Cute monsters" [ref=e186] [cursor=pointer]:
+                      - /url: /content/cute-monsters
+                  - generic [ref=e187]:
+                    - text: by
+                    - link "Starry Skydancer" [ref=e189] [cursor=pointer]:
+                      - /url: /users/starry-skydancer
+                - listitem [ref=e190]:
+                  - generic [ref=e192]:
+                    - link "Re:" [ref=e193] [cursor=pointer]:
+                      - /url: /content/flame-knight#comment-112274
+                    - link "Flame Knight" [ref=e194] [cursor=pointer]:
+                      - /url: /content/flame-knight
+                  - generic [ref=e195]:
+                    - text: by
+                    - link "arzaaa" [ref=e197] [cursor=pointer]:
+                      - /url: /users/arzaaa
+                - listitem [ref=e198]:
+                  - generic [ref=e200]:
+                    - link "Re:" [ref=e201] [cursor=pointer]:
+                      - /url: /content/flame-knight#comment-112273
+                    - link "Flame Knight" [ref=e202] [cursor=pointer]:
+                      - /url: /content/flame-knight
+                  - generic [ref=e203]:
+                    - text: by
+                    - link "arzaaa" [ref=e205] [cursor=pointer]:
+                      - /url: /users/arzaaa
+                - listitem [ref=e206]:
+                  - generic [ref=e208]:
+                    - link "Re:" [ref=e209] [cursor=pointer]:
+                      - /url: /content/flame-knight#comment-112272
+                    - link "Flame Knight" [ref=e210] [cursor=pointer]:
+                      - /url: /content/flame-knight
+                  - generic [ref=e211]:
+                    - text: by
+                    - link "h4xedByChikenL0v3r" [ref=e213] [cursor=pointer]:
+                      - /url: /users/h4xedbychikenl0v3r
+                - listitem [ref=e214]:
+                  - generic [ref=e216]:
+                    - link "Re:" [ref=e217] [cursor=pointer]:
+                      - /url: /content/cute-monsters#comment-112271
+                    - link "Cute monsters" [ref=e218] [cursor=pointer]:
+                      - /url: /content/cute-monsters
+                  - generic [ref=e219]:
+                    - text: by
+                    - link "RadThadd" [ref=e221] [cursor=pointer]:
+                      - /url: /users/radthadd
+                - listitem [ref=e222]:
+                  - generic [ref=e224]:
+                    - link "Re:" [ref=e225] [cursor=pointer]:
+                      - /url: /content/space-winds#comment-112270
+                    - link "Space Winds" [ref=e226] [cursor=pointer]:
+                      - /url: /content/space-winds
+                  - generic [ref=e227]:
+                    - text: by
+                    - link "aquinn" [ref=e229] [cursor=pointer]:
+                      - /url: /users/aquinn
+                - listitem [ref=e230]:
+                  - generic [ref=e232]:
+                    - link "Re:" [ref=e233] [cursor=pointer]:
+                      - /url: /content/flame-knight#comment-112267
+                    - link "Flame Knight" [ref=e234] [cursor=pointer]:
+                      - /url: /content/flame-knight
+                  - generic [ref=e235]:
+                    - text: by
+                    - link "h4xedByChikenL0v3r" [ref=e237] [cursor=pointer]:
+                      - /url: /users/h4xedbychikenl0v3r
+              - link "Subscribe to Recent comments" [ref=e239] [cursor=pointer]:
+                - /url: https://opengameart.org/recent-comments.xml
+                - img "Subscribe to Recent comments" [ref=e240]
+        - generic [ref=e242]:
+          - generic [ref=e243]:
+            - heading "New Art Collections - (view more)" [level=2] [ref=e244]:
+              - text: New Art Collections - (
+              - link "view more" [ref=e245] [cursor=pointer]:
+                - /url: /collections
+              - text: )
+            - list [ref=e250]:
+              - listitem [ref=e251]:
+                - link "Assets for a Sim-city like project I had" [ref=e254] [cursor=pointer]:
+                  - /url: /content/assets-for-a-sim-city-like-project-i-had
+              - listitem [ref=e255]:
+                - link "blobbert" [ref=e258] [cursor=pointer]:
+                  - /url: /content/blobbert
+              - listitem [ref=e259]:
+                - link "AoE like Assets" [ref=e262] [cursor=pointer]:
+                  - /url: /content/aoe-like-assets
+              - listitem [ref=e263]:
+                - link "Platform game" [ref=e266] [cursor=pointer]:
+                  - /url: /content/platform-game
+              - listitem [ref=e267]:
+                - link "Good CC0 Stuff!" [ref=e270] [cursor=pointer]:
+                  - /url: /content/good-cc0-stuff
+              - listitem [ref=e271]:
+                - link "CC0 Fonts" [ref=e274] [cursor=pointer]:
+                  - /url: /content/cc0-fonts-0
+              - listitem [ref=e275]:
+                - link "grass tiles" [ref=e278] [cursor=pointer]:
+                  - /url: /content/grass-tiles-5
+              - listitem [ref=e279]:
+                - link "Nature" [ref=e282] [cursor=pointer]:
+                  - /url: /content/nature-4
+              - listitem [ref=e283]:
+                - link "Seamless and CC0" [ref=e286] [cursor=pointer]:
+                  - /url: /content/seamless-and-cc0
+              - listitem [ref=e287]:
+                - link "Sound effects" [ref=e290] [cursor=pointer]:
+                  - /url: /content/sound-effects-15
+          - generic [ref=e291]:
+            - heading "Affiliates" [level=2] [ref=e292]
+            - list [ref=e297]:
+              - listitem [ref=e298]:
+                - link "FLARE" [ref=e301] [cursor=pointer]:
+                  - /url: http://flarerpg.org/
+              - listitem [ref=e302]:
+                - link "FreeGameDev" [ref=e305] [cursor=pointer]:
+                  - /url: https://freegamedev.net/p/3-about
+              - listitem [ref=e306]:
+                - link "Kenney" [ref=e309] [cursor=pointer]:
+                  - /url: https://kenney.nl/
+              - listitem [ref=e310]:
+                - link "Liberated Pixel Cup" [ref=e313] [cursor=pointer]:
+                  - /url: http://lpc.opengameart.org
+              - listitem [ref=e314]:
+                - link "Universal LPC Spritesheet Generator" [ref=e317] [cursor=pointer]:
+                  - /url: https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator
+      - generic [ref=e318]:
+        - heading "Page not found" [level=2] [ref=e320]
+        - generic [ref=e323]: The requested page "/content/16x16-item-set" could not be found.

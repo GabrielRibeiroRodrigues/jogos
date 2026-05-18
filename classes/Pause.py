@@ -21,9 +21,9 @@ class Pause:
 
     def update(self):
         self.screen.blit(self.pause_srfc, (0, 0))
-        self.dashboard.drawText("PAUSED", 120, 160, 68)
-        self.dashboard.drawText("CONTINUE", 150, 280, 32)
-        self.dashboard.drawText("BACK TO MENU", 150, 320, 32)
+        self.dashboard.drawText("PAUSADO", 100, 160, 68)
+        self.dashboard.drawText("CONTINUAR", 150, 280, 32)
+        self.dashboard.drawText("MENU", 150, 320, 32)
         self.drawDot()
         pygame.display.update()
         self.checkInput()

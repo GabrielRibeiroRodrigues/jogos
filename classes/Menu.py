@@ -94,17 +94,13 @@ class Menu:
 
     def drawMenu(self):
         self.drawDot()
-        self.dashboard.drawText("CHOOSE LEVEL", 180, 280, 24)
-        self.dashboard.drawText("SETTINGS", 180, 320, 24)
-        self.dashboard.drawText("EXIT", 180, 360, 24)
+        self.dashboard.drawText("JOGAR", 180, 280, 24)
+        self.dashboard.drawText("OPCOES", 180, 320, 24)
+        self.dashboard.drawText("SAIR", 180, 360, 24)
 
     def drawMenuBackground(self, withBanner=True):
-        for y in range(0, 13):
-            for x in range(0, 20):
-                self.screen.blit(
-                    self.level.sprites.spriteCollection.get("sky").image,
-                    (x * 32, y * 32),
-                )
+        self.screen.blit(self.level.background, (0, 0))
+        self.screen.blit(self.level.background, (self.level.bgWidth, 0))
         for y in range(13, 15):
             for x in range(0, 20):
                 self.screen.blit(
@@ -112,9 +108,10 @@ class Menu:
                     (x * 32, y * 32),
                 )
         if withBanner:
-            self.screen.blit(self.menu_banner, (150, 80))
+            self.dashboard.drawText("CRAZY", 200, 100, 48)
+            self.dashboard.drawText("WORLD", 200, 155, 48)
         self.screen.blit(
-            self.level.sprites.spriteCollection.get("mario_idle").image,
+            self.level.sprites.spriteCollection.get("yasmin_idle").image,
             (2 * 32, 12 * 32),
         )
         self.screen.blit(
@@ -136,17 +133,17 @@ class Menu:
 
     def drawSettings(self):
         self.drawDot()
-        self.dashboard.drawText("MUSIC", 180, 280, 24)
+        self.dashboard.drawText("MUSICA", 180, 280, 24)
         if self.music:
-            self.dashboard.drawText("ON", 340, 280, 24)
+            self.dashboard.drawText("SIM", 340, 280, 24)
         else:
-            self.dashboard.drawText("OFF", 340, 280, 24)
-        self.dashboard.drawText("SFX", 180, 320, 24)
+            self.dashboard.drawText("NAO", 340, 280, 24)
+        self.dashboard.drawText("SONS", 180, 320, 24)
         if self.sfx:
-            self.dashboard.drawText("ON", 340, 320, 24)
+            self.dashboard.drawText("SIM", 340, 320, 24)
         else:
-            self.dashboard.drawText("OFF", 340, 320, 24)
-        self.dashboard.drawText("BACK", 180, 360, 24)
+            self.dashboard.drawText("NAO", 340, 320, 24)
+        self.dashboard.drawText("VOLTAR", 180, 360, 24)
 
     def chooseLevel(self):
         self.drawMenuBackground(False)

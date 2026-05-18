@@ -10,7 +10,9 @@ class Camera:
 
     def move(self):
         xPosFloat = self.entity.getPosIndexAsFloat().x
-        if 10 < xPosFloat < 50:
+        levelLength = getattr(getattr(self.entity, 'levelObj', None), 'levelLength', 60)
+        rightLimit = max(50, levelLength - 10)
+        if 10 < xPosFloat < rightLimit:
             self.pos.x = -xPosFloat + 10
         self.x = self.pos.x * 32
         self.y = self.pos.y * 32

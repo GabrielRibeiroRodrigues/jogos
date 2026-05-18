@@ -1,0 +1,300 @@
+- generic [active] [ref=e1]:
+  - link "Get Kenney Game Assets All-in-1 to download everything at once, plus free updates!" [ref=e2] [cursor=pointer]:
+    - /url: https://kenney.itch.io/kenney-game-assets
+    - img [ref=e3]
+    - text: Get Kenney Game Assets All-in-1 to download
+    - emphasis [ref=e4]: everything
+    - text: at once, plus free updates!
+  - generic [ref=e6]:
+    - generic:
+      - list:
+        - listitem [ref=e7]:
+          - link [ref=e8] [cursor=pointer]:
+            - /url: https://kenney.nl
+            - img [ref=e9]
+        - generic:
+          - listitem [ref=e10]:
+            - link "Games" [ref=e11] [cursor=pointer]:
+              - /url: https://kenney.nl/games
+          - listitem [ref=e12]:
+            - link "Tools" [ref=e13] [cursor=pointer]:
+              - /url: https://kenney.nl/tools
+          - listitem [ref=e14]:
+            - link "Assets" [ref=e15] [cursor=pointer]:
+              - /url: https://kenney.nl/assets
+          - listitem [ref=e16]:
+            - link "Starter Kits" [ref=e17] [cursor=pointer]:
+              - /url: https://kenney.nl/starter-kits
+    - generic:
+      - list:
+        - listitem [ref=e18]:
+          - link [ref=e19] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e20]
+        - listitem [ref=e21]:
+          - link "Donate" [ref=e22] [cursor=pointer]:
+            - /url: https://kenney.nl/donate
+    - generic:
+      - link "×" [ref=e23] [cursor=pointer]:
+        - /url: javascript:void(0)
+      - generic:
+        - link "Games" [ref=e24] [cursor=pointer]:
+          - /url: https://kenney.nl/games
+        - link "Tools" [ref=e25] [cursor=pointer]:
+          - /url: https://kenney.nl/tools
+        - link "Assets" [ref=e26] [cursor=pointer]:
+          - /url: https://kenney.nl/assets
+        - link "Starter Kits" [ref=e27] [cursor=pointer]:
+          - /url: https://kenney.nl/starter-kits
+      - separator [ref=e28]
+      - generic:
+        - link "Support" [ref=e29] [cursor=pointer]:
+          - /url: https://kenney.nl/support
+        - link "Knowledge Base" [ref=e30] [cursor=pointer]:
+          - /url: https://kenney.nl/knowledge-base
+        - link "Donate" [ref=e31] [cursor=pointer]:
+          - /url: https://kenney.nl/donate
+      - separator [ref=e32]
+      - link [ref=e33] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e34]
+  - generic [ref=e37]:
+    - generic [ref=e40]:
+      - img [ref=e41]
+      - searchbox "Search" [ref=e42]
+    - paragraph [ref=e45]:
+      - link "2D" [ref=e46] [cursor=pointer]:
+        - /url: https://kenney.nl/assets/category:2D
+      - link "3D" [ref=e47] [cursor=pointer]:
+        - /url: https://kenney.nl/assets/category:3D
+      - link "UI" [ref=e48] [cursor=pointer]:
+        - /url: https://kenney.nl/assets/tag:interface
+      - link "Audio" [ref=e49] [cursor=pointer]:
+        - /url: https://kenney.nl/assets/category:Audio
+      - link "Pixel" [ref=e50] [cursor=pointer]:
+        - /url: https://kenney.nl/assets/tag:pixel
+      - link "Textures" [ref=e51] [cursor=pointer]:
+        - /url: https://kenney.nl/assets/category:Textures
+    - generic [ref=e52]:
+      - paragraph [ref=e54]:
+        - link "Upcoming" [ref=e55] [cursor=pointer]:
+          - /url: https://kenney.nl/upcoming
+        - link "Feed" [ref=e56] [cursor=pointer]:
+          - /url: https://kenney.nl/feed
+      - paragraph [ref=e59]:
+        - text: Sort by
+        - combobox [ref=e61]:
+          - option "Release date"
+          - option "Latest update" [selected]
+          - option "Quantity"
+          - option "Name"
+    - generic [ref=e62]:
+      - generic [ref=e64]:
+        - link [ref=e65] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/input-prompts
+        - heading "Input Prompts" [level=2] [ref=e67]:
+          - link "Input Prompts" [ref=e68] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/input-prompts
+        - generic [ref=e69]:
+          - link "2D" [ref=e71] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/category:2D
+          - text: •
+          - link "Input Prompts" [ref=e72] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/series:Input%20Prompts
+      - generic [ref=e74]:
+        - link [ref=e75] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/factory-kit
+        - heading "Factory Kit" [level=2] [ref=e77]:
+          - link "Factory Kit" [ref=e78] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/factory-kit
+        - link "3D" [ref=e81] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/category:3D
+      - generic [ref=e83]:
+        - link [ref=e84] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/light-masks
+        - heading "Light Masks" [level=2] [ref=e86]:
+          - link "Light Masks" [ref=e87] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/light-masks
+        - generic [ref=e88]:
+          - link "2D" [ref=e90] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/category:2D
+          - text: •
+          - link "VFX" [ref=e91] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/series:VFX
+      - generic [ref=e93]:
+        - link [ref=e94] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/car-kit
+        - heading "Car Kit" [level=2] [ref=e96]:
+          - link "Car Kit" [ref=e97] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/car-kit
+        - generic [ref=e98]:
+          - link "3D" [ref=e100] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/category:3D
+          - text: •
+          - link "Transport" [ref=e101] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/series:Transport
+      - generic [ref=e103]:
+        - link [ref=e104] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/platformer-kit
+        - heading "Platformer Kit" [level=2] [ref=e106]:
+          - link "Platformer Kit" [ref=e107] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/platformer-kit
+        - link "3D" [ref=e110] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/category:3D
+      - generic [ref=e112]:
+        - link [ref=e113] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/cube-pets
+        - heading "Cube Pets" [level=2] [ref=e115]:
+          - link "Cube Pets" [ref=e116] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/cube-pets
+        - link "3D" [ref=e119] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/category:3D
+      - generic [ref=e121]:
+        - link [ref=e122] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/modular-dungeon-kit
+        - heading "Modular Dungeon Kit" [level=2] [ref=e124]:
+          - link "Modular Dungeon Kit" [ref=e125] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/modular-dungeon-kit
+        - generic [ref=e126]:
+          - link "3D" [ref=e128] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/category:3D
+          - text: •
+          - link "Modular" [ref=e129] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/series:Modular
+      - generic [ref=e131]:
+        - link [ref=e132] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/pirate-kit
+        - heading "Pirate Kit" [level=2] [ref=e134]:
+          - link "Pirate Kit" [ref=e135] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/pirate-kit
+        - link "3D" [ref=e138] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/category:3D
+      - generic [ref=e140]:
+        - link [ref=e141] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/mini-dungeon
+        - heading "Mini Dungeon" [level=2] [ref=e143]:
+          - link "Mini Dungeon" [ref=e144] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/mini-dungeon
+        - generic [ref=e145]:
+          - link "3D" [ref=e147] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/category:3D
+          - text: •
+          - link "Mini" [ref=e148] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/series:Mini
+      - generic [ref=e150]:
+        - link [ref=e151] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/modular-space-kit
+        - heading "Modular Space Kit" [level=2] [ref=e153]:
+          - link "Modular Space Kit" [ref=e154] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/modular-space-kit
+        - generic [ref=e155]:
+          - link "3D" [ref=e157] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/category:3D
+          - text: •
+          - link "Modular" [ref=e158] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/series:Modular
+      - generic [ref=e160]:
+        - link [ref=e161] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/retro-textures-fantasy
+        - heading "Retro Textures Fantasy" [level=2] [ref=e163]:
+          - link "Retro Textures Fantasy" [ref=e164] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/retro-textures-fantasy
+        - generic [ref=e165]:
+          - link "Textures" [ref=e167] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/category:Textures
+          - text: •
+          - link "Retro" [ref=e168] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/series:Retro
+      - generic [ref=e170]:
+        - link [ref=e171] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/development-essentials
+        - heading "Development Essentials" [level=2] [ref=e173]:
+          - link "Development Essentials" [ref=e174] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/development-essentials
+        - link "Textures" [ref=e177] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/category:Textures
+      - generic [ref=e179]:
+        - link [ref=e180] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/new-platformer-pack
+        - heading "New Platformer Pack" [level=2] [ref=e182]:
+          - link "New Platformer Pack" [ref=e183] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/new-platformer-pack
+        - link "2D" [ref=e186] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/category:2D
+      - generic [ref=e188]:
+        - link [ref=e189] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/graveyard-kit
+        - heading "Graveyard Kit" [level=2] [ref=e191]:
+          - link "Graveyard Kit" [ref=e192] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/graveyard-kit
+        - link "3D" [ref=e195] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/category:3D
+      - generic [ref=e197]:
+        - link [ref=e198] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/desert-shooter-pack
+        - heading "Desert Shooter Pack" [level=2] [ref=e200]:
+          - link "Desert Shooter Pack" [ref=e201] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/desert-shooter-pack
+        - link "2D" [ref=e204] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/category:2D
+      - generic [ref=e206]:
+        - link [ref=e207] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/mobile-controls
+        - heading "Mobile Controls" [level=2] [ref=e209]:
+          - link "Mobile Controls" [ref=e210] [cursor=pointer]:
+            - /url: https://kenney.nl/assets/mobile-controls
+        - link "2D" [ref=e213] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/category:2D
+    - list [ref=e216]:
+      - listitem [ref=e217]:
+        - link [ref=e218] [cursor=pointer]:
+          - /url: https://kenney.nl/assets?q=platformer
+          - img [ref=e219]
+          - img [ref=e220]
+      - listitem [ref=e221]:
+        - link [ref=e222] [cursor=pointer]:
+          - /url: ""
+          - img [ref=e223]
+      - listitem
+      - listitem [ref=e224]:
+        - link "1" [ref=e225] [cursor=pointer]:
+          - /url: https://kenney.nl/assets?q=platformer
+      - listitem [ref=e226]:
+        - link "2" [ref=e227] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/page:2?q=platformer
+      - listitem [ref=e228]:
+        - link "3" [ref=e229] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/page:3?q=platformer
+      - listitem [ref=e230]:
+        - link "4" [ref=e231] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/page:4?q=platformer
+      - listitem [ref=e232]:
+        - link "5" [ref=e233] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/page:5?q=platformer
+      - listitem [ref=e234]: …
+      - listitem [ref=e235]:
+        - link "13" [ref=e236] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/page:13?q=platformer
+      - listitem
+      - listitem [ref=e237]:
+        - link [ref=e238] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/page:2?q=platformer
+          - img [ref=e239]
+      - listitem [ref=e240]:
+        - link [ref=e241] [cursor=pointer]:
+          - /url: https://kenney.nl/assets/page:13?q=platformer
+          - img [ref=e242]
+          - img [ref=e243]
+  - contentinfo [ref=e244]:
+    - generic [ref=e246]: Copyright © 2010 - 2026 · All rights reserved
+    - generic [ref=e248]:
+      - link "Feed" [ref=e249] [cursor=pointer]:
+        - /url: https://kenney.nl/feed
+      - link "Support" [ref=e250] [cursor=pointer]:
+        - /url: https://kenney.nl/support
+      - link "Knowledge Base" [ref=e251] [cursor=pointer]:
+        - /url: https://kenney.nl/knowledge-base
+      - link "Privacy Policy" [ref=e252] [cursor=pointer]:
+        - /url: https://kenney.nl/privacy-policy
+      - link "Terms of Service" [ref=e253] [cursor=pointer]:
+        - /url: https://kenney.nl/terms-of-service

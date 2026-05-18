@@ -11,6 +11,14 @@
             "collision":false
         },
         {
+            "name":"ground_dirt",
+            "x":30,
+            "y":0,
+            "redrawBg":false,
+            "scalefactor":2,
+            "collision":true
+        },
+        {
             "name":"bricks",
             "x":1,
             "y":0,
@@ -150,7 +158,8 @@
             "collision":false,
             "colorKey": [0,0,0]
         }
-    ] 
+    ]
 }
+
 
 

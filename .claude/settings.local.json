@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash *)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_click",
+      "Bash(py main.py)",
+      "Skill(update-config)",
+      "Skill(superpowers:subagent-driven-development)",
+      "Bash(py -c \"import pygame; pygame.init\\(\\); import sys; sys.path.insert\\(0,'.'\\); from traits.dash import DashTrait; from traits.jump import JumpTrait; print\\('OK'\\)\")",
+      "Bash(py -c \"import json; d=json.load\\(open\\('levels/Level2-1.json'\\)\\); print\\('Valid JSON, length:', d['length'], '| entities:', list\\(d['level']['entities'].keys\\(\\)\\)\\)\")",
+      "Bash(py -m py_compile main.py classes/Level.py classes/Menu.py classes/LevelComplete.py)",
+      "Bash(py -m py_compile main.py classes/Level.py classes/Menu.py classes/LevelComplete.py entities/Yasmin.py traits/dash.py traits/jump.py entities/MovingPlatform.py)",
+      "Bash(py -m py_compile main.py classes/Level.py classes/Menu.py)",
+      "Bash(python -c \"import json; d=json.load\\(open\\('levels/Level2-1.json'\\)\\); print\\('layers:', d['level']['layers']\\); objs=d['level']['objects']; print\\('ground sample:', objs['ground'][:5]\\); print\\('sky range:', d['level']['layers']['sky']\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(py -m py_compile classes/Level.py main.py)",
+      "Bash(py -c \"import json; d=json.load\\(open\\('levels/Level2-1.json'\\)\\); sky_ys=set\\(e[1] for e in d['level']['objects']['sky']\\); print\\('sky y values:', sorted\\(sky_ys\\)\\); print\\('sky entries:', len\\(d['level']['objects']['sky']\\)\\)\")",
+      "Bash(start *)",
+      "Bash(ping -n 4 127.0.0.1)",
+      "Bash(py -c \"import subprocess,sys; result=subprocess.run\\(['py','-c','import pygame; pygame.init\\(\\); s=pygame.display.set_mode\\(\\(640,480\\)\\); print\\(\\\\\"pygame ok\\\\\"\\)'], capture_output=True, text=True, timeout=5\\); print\\(result.stdout, result.stderr\\)\")",
+      "Bash(ping *)",
+      "Bash(py -c ' *)",
+      "Bash(py -m py_compile traits/leftrightwalk.py)",
+      "Bash(py *)",
+      "PowerShell(py *)",
+      "Bash(Get-ChildItem -Recurse -Path \"C:\\\\Users\\\\12265587630\\\\super-mario-python\" -Include \"*Mario*\" -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object FullName)"
+    ]
+  }
+}
