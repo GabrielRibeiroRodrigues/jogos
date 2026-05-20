@@ -10,8 +10,6 @@ class Sprites:
         self.spriteCollection = self.loadSprites(
             [
                 "./sprites/Yasmin.json",
-                "./sprites/Bruno.json",
-                "./sprites/HeavyBot.json",
                 "./sprites/Animations.json",
                 "./sprites/BackgroundSprites.json",
                 "./sprites/ItemAnimations.json",

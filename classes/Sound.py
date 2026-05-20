@@ -11,16 +11,10 @@ class Sound:
         self.allowSFX = True
 
         self.soundtrack = mixer.Sound("./sfx/main_theme.ogg")
-        self.coin = mixer.Sound("./sfx/coin.ogg")
         self.bump = mixer.Sound("./sfx/bump.ogg")
-        self.stomp = mixer.Sound("./sfx/stomp.ogg")
         self.jump = mixer.Sound("./sfx/small_jump.ogg")
         self.death = mixer.Sound("./sfx/death.wav")
-        self.kick = mixer.Sound("./sfx/kick.ogg")
-        self.brick_bump = mixer.Sound("./sfx/brick-bump.ogg")
         self.powerup = mixer.Sound('./sfx/powerup.ogg')
-        self.powerup_appear = mixer.Sound('./sfx/powerup_appears.ogg')
-        self.pipe = mixer.Sound('./sfx/pipe.ogg')
 
     def play_sfx(self, sfx):
         if self.allowSFX:

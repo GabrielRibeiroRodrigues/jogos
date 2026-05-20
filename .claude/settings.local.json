@@ -29,7 +29,8 @@
       "Bash(Get-ChildItem -Recurse -Path \"C:\\\\Users\\\\12265587630\\\\super-mario-python\" -Include \"*Mario*\" -ErrorAction SilentlyContinue)",
       "Bash(Select-Object FullName)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(python -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d['spriteSheetURL']\\)\")"
     ]
   }
 }
