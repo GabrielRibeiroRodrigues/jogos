@@ -3,6 +3,7 @@ import pygame
 
 from classes.Dashboard import Dashboard
 from classes.GameOverScreen import GameOverScreen
+from classes.HowToPlayScreen import HowToPlayScreen
 from classes.Level import Level
 from classes.Menu import Menu
 from classes.Sound import Sound
@@ -75,6 +76,9 @@ def main():
 
     sound.music_channel.stop()
 
+    how_to_play = HowToPlayScreen(screen, dashboard)
+    how_to_play.show()
+
     game_over_screen = GameOverScreen(screen)
     victory_screen = VictoryScreen(screen, dashboard)
 
@@ -115,6 +119,7 @@ def _back_to_menu(screen, sound, dashboard, menu):
         menu.update()
         menu_clock.tick(60)
     sound.music_channel.stop()
+    HowToPlayScreen(screen, dashboard).show()
 
 
 if __name__ == "__main__":

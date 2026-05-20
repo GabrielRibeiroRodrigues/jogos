@@ -3,10 +3,10 @@ import pygame
 
 class Projectile:
     def __init__(self, x, y, direction, screen):
-        self.rect = pygame.Rect(x, y, 12, 8)
+        self.rect = pygame.Rect(x, y, 14, 5)
         self.screen = screen
         self.direction = direction
-        self.speed = 7
+        self.speed = 9
         self.alive = True
         self.type = "Projectile"
         self.lifetime = 90
@@ -25,9 +25,16 @@ class Projectile:
                     entity.on_hit(self.direction)
                     self.alive = False
                     return
-        pygame.draw.ellipse(
-            self.screen,
-            (255, 80, 0),
-            (self.rect.x + camera.x, self.rect.y + camera.y,
-             self.rect.width, self.rect.height),
-        )
+
+        rx = self.rect.x + camera.x
+        ry = self.rect.y
+
+        # rastro laranja
+        pygame.draw.rect(self.screen, (180, 80, 0),
+                         (rx - self.direction * 8, ry + 1, 8, 3))
+        # núcleo amarelo brilhante
+        pygame.draw.rect(self.screen, (255, 240, 60),
+                         (rx, ry, self.rect.width, self.rect.height))
+        # ponta branca
+        tip_x = rx + self.rect.width if self.direction == 1 else rx - 2
+        pygame.draw.rect(self.screen, (255, 255, 200), (tip_x, ry + 1, 3, 3))

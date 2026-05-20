@@ -9,7 +9,6 @@ from classes.Sprites import Sprites
 from entities.EntityBase import EntityBase
 from entities.Projectile import Projectile
 from traits.bounce import bounceTrait
-from traits.dash import DashTrait
 from traits.go import GoTrait
 from traits.jump import JumpTrait
 from traits.melee import MeleeTrait
@@ -41,9 +40,7 @@ class Yasmin(EntityBase):
             "jumpTrait": JumpTrait(self),
             "goTrait": GoTrait(smallAnimation, screen, self.camera, self),
             "bounceTrait": bounceTrait(self),
-            "dashTrait": DashTrait(self),
         }
-        self.dashTrait = self.traits["dashTrait"]
         self.meleeTrait = MeleeTrait(self)
         self.attackImage = spriteCollection["yasmin_break"].image
         self.powerup_active = False
@@ -64,8 +61,6 @@ class Yasmin(EntityBase):
     def update(self):
         if self.invincibilityFrames > 0:
             self.invincibilityFrames -= 1
-        self.dashTrait.update()
-        self.dashTrait.draw(self.screen, self.camera)
         self.updateTraits()
         self.meleeTrait.update()
         self._checkMeleeHits()

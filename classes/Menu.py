@@ -87,8 +87,8 @@ class Menu:
             pygame.draw.rect(self.screen, accent, (cx, cy, size, size))
 
         # title text
-        self.dashboard.drawText("CRAZY", bx + 30, by + 10, 52, (0, 255, 220))
-        self.dashboard.drawText("WORLD", bx + 30, by + 62, 52, (255, 60, 200))
+        self.dashboard.drawText("CRAZY", bx + 30, by + 10, 52, (220,  30,  30))
+        self.dashboard.drawText("WORLD", bx + 30, by + 62, 52, (255, 200,   0))
 
     # ── cursor ────────────────────────────────────────────────────────────────
 
@@ -96,7 +96,7 @@ class Menu:
         if self.blink_timer < 45:
             y = y_positions[self.state]
             pts = [(150, y + 6), (150, y + 22), (166, y + 14)]
-            pygame.draw.polygon(self.screen, (0, 255, 200), pts)
+            pygame.draw.polygon(self.screen, (255, 50, 50), pts)
 
     # ── menu ──────────────────────────────────────────────────────────────────
 
@@ -106,7 +106,7 @@ class Menu:
         self._drawCursor(y_positions)
 
         for i, (label, y) in enumerate(options):
-            color = (0, 255, 200) if i == self.state else (200, 200, 200)
+            color = (255, 220, 60) if i == self.state else (200, 190, 160)
             self.dashboard.drawText(label, 180, y, 24, color)
 
     # ── settings ──────────────────────────────────────────────────────────────
@@ -121,7 +121,7 @@ class Menu:
             ("VOLTAR", ""),
         ]
         for i, (label, value) in enumerate(rows):
-            color = (0, 255, 200) if i == self.state else (200, 200, 200)
+            color = (255, 220, 60) if i == self.state else (200, 190, 160)
             self.dashboard.drawText(label, 180, y_positions[i], 24, color)
             if value:
                 self.dashboard.drawText(value, 340, y_positions[i], 24, color)

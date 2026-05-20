@@ -19,13 +19,22 @@ class VictoryScreen:
                 if event.type == pygame.KEYDOWN:
                     if event.key in (pygame.K_RETURN, pygame.K_SPACE, pygame.K_ESCAPE):
                         return "menu"
-            self.screen.fill((5, 10, 30))
-            title = font_big.render("MISSAO COMPLETA!", True, (0, 255, 180))
-            subtitle = font_small.render("Pontos: {:06d}".format(self.dashboard.points), True, (200, 200, 200))
-            hint = font_small.render("ENTER para voltar ao menu", True, (120, 120, 120))
+            self.screen.fill((5, 8, 0))
             w, h = self.screen.get_size()
-            self.screen.blit(title, (w // 2 - title.get_width() // 2, h // 2 - 80))
-            self.screen.blit(subtitle, (w // 2 - subtitle.get_width() // 2, h // 2))
-            self.screen.blit(hint, (w // 2 - hint.get_width() // 2, h // 2 + 60))
+            # grade decorativa
+            for gx in range(0, w, 40):
+                for gy in range(0, h, 40):
+                    pygame.draw.circle(self.screen, (25, 35, 10), (gx, gy), 1)
+            title    = font_big.render("MISSION COMPLETE", True, (255, 220, 0))
+            subtitle = font_small.render("SCORE  {:06d}".format(self.dashboard.points), True, (255, 160, 40))
+            hint     = font_small.render("PRESS ENTER", True, (160, 130, 50))
+            # linha decorativa
+            pygame.draw.line(self.screen, (180, 130, 0),
+                             (w//2 - 200, h//2 - 55), (w//2 + 200, h//2 - 55), 1)
+            pygame.draw.line(self.screen, (180, 130, 0),
+                             (w//2 - 200, h//2 + 30), (w//2 + 200, h//2 + 30), 1)
+            self.screen.blit(title,    (w//2 - title.get_width()//2,    h//2 - 90))
+            self.screen.blit(subtitle, (w//2 - subtitle.get_width()//2, h//2 - 20))
+            self.screen.blit(hint,     (w//2 - hint.get_width()//2,     h//2 + 50))
             pygame.display.flip()
             clock.tick(60)
