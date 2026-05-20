@@ -107,6 +107,7 @@ def _back_to_menu(screen, sound, dashboard, menu):
     dashboard.points = 0
     dashboard.time = 0
     dashboard.ticks = 0
+    dashboard.yasmin = None
     menu.level = make_menu_level(screen, sound, dashboard)
     menu.start = False
     while not menu.start:

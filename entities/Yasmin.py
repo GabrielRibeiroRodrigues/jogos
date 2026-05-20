@@ -102,7 +102,7 @@ class Yasmin(EntityBase):
                 self.projectiles.remove(proj)
 
     def checkEntityCollision(self):
-        for ent in self.levelObj.entityList:
+        for ent in self.levelObj.entityList[:]:
             collisionState = self.EntityCollider.check(ent)
             if collisionState.isColliding:
                 if ent.type == "Item":
@@ -124,7 +124,10 @@ class Yasmin(EntityBase):
         block.triggered = True
 
     def _onCollisionWithMob(self, mob, collisionState):
-        if mob.alive and mob.alive is not None and collisionState.isColliding and not self.invincibilityFrames:
+        if (mob.alive and mob.alive is not None
+                and mob.hit_stun == 0
+                and collisionState.isColliding
+                and not self.invincibilityFrames):
             self.gameOver()
 
     def activatePowerup(self):
@@ -147,6 +150,8 @@ class Yasmin(EntityBase):
         self.dashboard.points += 100
 
     def gameOver(self):
+        if self.restart_phase:
+            return
         srf = pygame.Surface((640, 480))
         srf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
         srf.set_alpha(128)
