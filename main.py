@@ -9,7 +9,7 @@ from classes.Sound import Sound
 from classes.VictoryScreen import VictoryScreen
 from entities.Yasmin import Yasmin
 
-PHASES = ["Phase1", "Phase2", "Phase3"]
+PHASES = ["Level2-1", "Level2-2", "Level2-3"]
 PHASE_NAMES = ["1", "2", "3"]
 windowSize = 640, 480
 
@@ -52,9 +52,7 @@ def run_phase(screen, sound, dashboard, phase_name, phase_display):
 
 
 def make_menu_level(screen, sound, dashboard):
-    level = Level(screen, sound, dashboard)
-    level.loadLevel(PHASES[0])
-    return level
+    return Level(screen, sound, dashboard)
 
 
 def main():

@@ -4,10 +4,7 @@ import pygame
 class Spritesheet(object):
     def __init__(self, filename):
         try:
-            self.sheet = pygame.image.load(filename)
-            self.sheet = pygame.image.load(filename)
-            if not self.sheet.get_alpha():
-                self.sheet.set_colorkey((0, 0, 0))
+            self.sheet = pygame.image.load(filename).convert_alpha()
         except pygame.error:
             print("Unable to load spritesheet image:", filename)
             raise SystemExit
@@ -18,12 +15,12 @@ class Spritesheet(object):
             rect = pygame.Rect((x, y, xTileSize, yTileSize))
         else:
             rect = pygame.Rect((x * xTileSize, y * yTileSize, xTileSize, yTileSize))
-        image = pygame.Surface(rect.size)
+        image = pygame.Surface(rect.size, pygame.SRCALPHA)
         image.blit(self.sheet, (0, 0), rect)
         if colorkey is not None:
             if colorkey == -1:
-                colorkey = image.get_at((0, 0))
+                colorkey = self.sheet.get_at((rect.x, rect.y))[:3]
             image.set_colorkey(colorkey, pygame.RLEACCEL)
         return pygame.transform.scale(
-            image, (xTileSize * scalingfactor, yTileSize * scalingfactor)
+            image, (int(xTileSize * scalingfactor), int(yTileSize * scalingfactor))
         )
