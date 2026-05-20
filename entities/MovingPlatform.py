@@ -18,6 +18,8 @@ class MovingPlatform:
         self.startX = x * 32
         self.startY = y * 32
         self.vel = speed  # current velocity, flips when reaching amplitude
+        self.delta_x = 0
+        self.delta_y = 0
         self.image = self._loadSprite()
         self.collisionRect = self.rect.copy()
 
@@ -33,15 +35,20 @@ class MovingPlatform:
             return surf
 
     def update(self, camera):
-        # Move the platform
+        self.delta_x = 0
+        self.delta_y = 0
         if self.direction == "horizontal":
+            old_x = self.rect.x
             self.rect.x += self.vel
             if abs(self.rect.x - self.startX) >= self.amplitude:
                 self.vel *= -1
-        else:  # vertical
+            self.delta_x = self.rect.x - old_x
+        else:
+            old_y = self.rect.y
             self.rect.y += self.vel
             if abs(self.rect.y - self.startY) >= self.amplitude:
                 self.vel *= -1
+            self.delta_y = self.rect.y - old_y
         self.collisionRect = self.rect.copy()
         self.draw(camera)
 

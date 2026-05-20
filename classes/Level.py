@@ -105,17 +105,18 @@ class Level:
                 self.entityList.remove(entity)
             if isinstance(entity, MovingPlatform) and entity.alive:
                 platform = entity
-                if player.rect.colliderect(platform.rect):
+                # Expand rect slightly downward to keep player "stuck" on top
+                detection = platform.rect.inflate(0, 4)
+                if player.rect.colliderect(detection):
                     player_bottom = player.rect.bottom
                     platform_top = platform.rect.top
-                    if player.vel.y >= 0 and player_bottom >= platform_top and player_bottom <= platform.rect.bottom:
+                    if player.vel.y >= 0 and player_bottom >= platform_top and player_bottom <= platform.rect.bottom + 8:
                         player.rect.bottom = platform_top
                         player.vel.y = 0
                         player.onGround = True
-                        if platform.direction == "horizontal":
-                            player.rect.x += platform.vel
-                        else:
-                            player.rect.y += platform.vel
+                        # Use the actual delta moved this frame, not vel (which may have flipped)
+                        player.rect.x += platform.delta_x
+                        player.rect.y += platform.delta_y
 
     def checkEndPortal(self, yasminRect):
         if not self.hasEndPortal or self.endPortalRect is None:
