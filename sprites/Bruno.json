@@ -1,36 +1,36 @@
 {
-    "spriteSheetURL": "./img/bruno_sprites.png",
+    "spriteSheetURL": "./img/bruno_walk.png",
     "type": "character",
-    "size": [32, 32],
+    "size": [64, 64],
     "sprites": [
         {
             "name": "drone-1",
             "x": 0,
             "y": 0,
-            "xsize": 32,
-            "ysize": 32,
+            "xsize": 64,
+            "ysize": 64,
             "scalefactor": 1,
-            "colorKey": -1,
+            "colorKey": null,
             "collision": false
         },
         {
             "name": "drone-2",
-            "x": 32,
+            "x": 64,
             "y": 0,
-            "xsize": 32,
-            "ysize": 32,
+            "xsize": 64,
+            "ysize": 64,
             "scalefactor": 1,
-            "colorKey": -1,
+            "colorKey": null,
             "collision": false
         },
         {
             "name": "drone-flat",
-            "x": 64,
+            "x": 128,
             "y": 0,
-            "xsize": 32,
-            "ysize": 32,
+            "xsize": 64,
+            "ysize": 64,
             "scalefactor": 1,
-            "colorKey": -1,
+            "colorKey": null,
             "collision": false
         }
     ]

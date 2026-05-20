@@ -26,12 +26,7 @@ class GoTrait:
 
         if self.direction != 0:
             self.heading = self.direction
-            if self.heading == 1:
-                if self.entity.vel.x < self.maxVel:
-                    self.entity.vel.x += self.accelVel * self.heading
-            else:
-                if self.entity.vel.x > -self.maxVel:
-                    self.entity.vel.x += self.accelVel * self.heading
+            self.entity.vel.x = self.maxVel * self.heading
 
             if not self.entity.inAir:
                 self.animation.update()

@@ -12,8 +12,8 @@ class Bruno(EntityBase):
         self.spriteCollection = spriteColl
         self.animation = Animation(
             [
-                self.spriteCollection.get("goomba-1").image,
-                self.spriteCollection.get("goomba-2").image,
+                self.spriteCollection.get("drone-1").image,
+                self.spriteCollection.get("drone-2").image,
             ]
         )
         self.screen = screen
@@ -51,7 +51,7 @@ class Bruno(EntityBase):
 
     def drawFlatBruno(self, camera):
         self.screen.blit(
-            self.spriteCollection.get("goomba-flat").image,
+            self.spriteCollection.get("drone-flat").image,
             (self.rect.x + camera.x, self.rect.y),
         )
 

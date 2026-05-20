@@ -1,4 +1,5 @@
 import pygame
+from pygame.transform import flip
 
 from classes.Animation import Animation
 from classes.Collider import Collider
@@ -59,10 +60,10 @@ class Drone(EntityBase):
         self.animation.update()
 
     def _draw(self, camera):
-        self.screen.blit(
-            self.animation.image,
-            (self.rect.x + camera.x, self.rect.y),
-        )
+        frame = self.animation.image
+        if self.leftrightTrait.direction == -1:
+            frame = flip(frame, True, False)
+        self.screen.blit(frame, (self.rect.x + camera.x - 16, self.rect.y - 32))
 
     def _onDead(self, camera):
         if self.timer < self.timeAfterDeath:
@@ -70,7 +71,7 @@ class Drone(EntityBase):
             self.dashboard.drawText("100", self.textPos.x + camera.x, self.textPos.y, 8)
             self.screen.blit(
                 self.spriteCollection.get("drone-flat").image,
-                (self.rect.x + camera.x, self.rect.y),
+                (self.rect.x + camera.x - 16, self.rect.y - 32),
             )
         else:
             self.alive = None

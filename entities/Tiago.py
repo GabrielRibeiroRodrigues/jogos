@@ -14,8 +14,8 @@ class Tiago(EntityBase):
         self.spriteCollection = spriteColl
         self.animation = Animation(
             [
-                self.spriteCollection.get("koopa-1").image,
-                self.spriteCollection.get("koopa-2").image,
+                self.spriteCollection.get("heavybot-1").image,
+                self.spriteCollection.get("heavybot-2").image,
             ]
         )
         self.screen = screen
@@ -53,14 +53,14 @@ class Tiago(EntityBase):
     def shellBouncing(self, camera):
         self.leftrightTrait.speed = 4
         self.applyGravity()
-        self.animation.image = self.spriteCollection.get("koopa-hiding").image
+        self.animation.image = self.spriteCollection.get("heavybot-damaged").image
         self.drawTiago(camera)
         self.leftrightTrait.update()
 
     def sleepingInShell(self, camera):
         if self.timer < self.timeAfterDeath:
             self.screen.blit(
-                self.spriteCollection.get("koopa-hiding").image,
+                self.spriteCollection.get("heavybot-damaged").image,
                 (self.rect.x + camera.x, self.rect.y - 32),
             )
         else:

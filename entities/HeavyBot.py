@@ -61,7 +61,7 @@ class HeavyBot(EntityBase):
     def _draw(self, camera):
         key = "heavybot-1" if self.hp >= 2 else "heavybot-damaged"
         frame = self.spriteCollection.get(key).image
-        if self.leftrightTrait.direction == 1:
+        if self.leftrightTrait.direction == -1:
             frame = pygame.transform.flip(frame, True, False)
         self.screen.blit(frame, (self.rect.x + camera.x, self.rect.y - 32))
 
