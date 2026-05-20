@@ -57,9 +57,13 @@ class GoTrait:
         self.update()
 
     def drawEntity(self):
+        attacking = (
+            hasattr(self.entity, 'meleeTrait')
+            and self.entity.meleeTrait.is_attacking
+            and hasattr(self.entity, 'attackImage')
+        )
+        image = self.entity.attackImage if attacking else self.animation.image
         if self.heading == 1:
-            self.screen.blit(self.animation.image, self.entity.getPos())
+            self.screen.blit(image, self.entity.getPos())
         elif self.heading == -1:
-            self.screen.blit(
-                flip(self.animation.image, True, False), self.entity.getPos()
-            )
+            self.screen.blit(flip(image, True, False), self.entity.getPos())

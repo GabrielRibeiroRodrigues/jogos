@@ -4,7 +4,7 @@
     "size": [32, 64],
     "sprites": [
         {
-            "name": "koopa-1",
+            "name": "heavybot-1",
             "x": 0,
             "y": 0,
             "xsize": 32,
@@ -14,7 +14,7 @@
             "collision": false
         },
         {
-            "name": "koopa-2",
+            "name": "heavybot-2",
             "x": 32,
             "y": 0,
             "xsize": 32,
@@ -24,7 +24,7 @@
             "collision": false
         },
         {
-            "name": "koopa-hiding",
+            "name": "heavybot-damaged",
             "x": 64,
             "y": 0,
             "xsize": 32,
@@ -34,7 +34,7 @@
             "collision": false
         },
         {
-            "name": "koopa-hiding-with-legs",
+            "name": "heavybot-damaged-2",
             "x": 96,
             "y": 0,
             "xsize": 32,

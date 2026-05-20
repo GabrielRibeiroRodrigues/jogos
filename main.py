@@ -1,35 +1,38 @@
 import sys
 import pygame
+
 from classes.Dashboard import Dashboard
+from classes.GameOverScreen import GameOverScreen
 from classes.Level import Level
-from classes.LevelComplete import LevelComplete
 from classes.Menu import Menu
 from classes.Sound import Sound
+from classes.VictoryScreen import VictoryScreen
 from entities.Yasmin import Yasmin
 
-
+PHASES = ["Phase1", "Phase2", "Phase3"]
+PHASE_NAMES = ["1", "2", "3"]
 windowSize = 640, 480
 
 
-def main():
-    pygame.mixer.pre_init(44100, -16, 2, 4096)
-    pygame.init()
-    screen = pygame.display.set_mode(windowSize)
-    max_frame_rate = 60
-    dashboard = Dashboard(screen=screen)
-    sound = Sound()
+def run_phase(screen, sound, dashboard, phase_name, phase_display):
     level = Level(screen, sound, dashboard)
-    menu = Menu(screen, dashboard, level, sound)
+    level.loadLevel(phase_name)
 
-    while not menu.start:
-        menu.update()
+    dashboard.state = "start"
+    dashboard.time = 0
+    dashboard.ticks = 0
+    dashboard.levelName = phase_display
 
     yasmin = Yasmin(0, 0, level, screen, dashboard, sound)
-    clock = pygame.time.Clock()
-    startTime = pygame.time.get_ticks()
+    dashboard.yasmin = yasmin
 
-    while not yasmin.restart:
-        pygame.display.set_caption("Crazy World running with {:d} FPS".format(int(clock.get_fps())))
+    clock = pygame.time.Clock()
+
+    while True:
+        pygame.display.set_caption(
+            "Crazy World - Fase {} - {:d} FPS".format(phase_display, int(clock.get_fps()))
+        )
+
         if yasmin.pause:
             yasmin.pauseObj.update()
         else:
@@ -37,35 +40,79 @@ def main():
             dashboard.update()
             yasmin.update()
 
-            # Check end portal collision
-            if level.checkEndPortal(yasmin.rect):
-                elapsed = (pygame.time.get_ticks() - startTime) / 1000.0
-                levelComplete = LevelComplete(screen, dashboard, sound,
-                                               coins=dashboard.coins,
-                                               time_elapsed=elapsed)
-                while levelComplete.active:
-                    events = pygame.event.get()
-                    for event in events:
-                        if event.type == pygame.QUIT:
-                            pygame.quit()
-                            sys.exit()
-                    levelComplete.update(events)
-                    levelComplete.draw()
-                    pygame.display.flip()
-                    clock.tick(60)
-
-                if levelComplete.nextLevel:
-                    break
-                elif levelComplete.goMenu:
-                    yasmin.restart = True
-                    break
-
         pygame.display.update()
-        clock.tick(max_frame_rate)
-    return 'restart'
+        clock.tick(60)
+
+        if yasmin.restart_phase:
+            return "restart"
+        if yasmin.go_to_menu:
+            return "menu"
+        if level.checkEndPortal(yasmin.rect):
+            return "next"
+
+
+def make_menu_level(screen, sound, dashboard):
+    level = Level(screen, sound, dashboard)
+    level.loadLevel(PHASES[0])
+    return level
+
+
+def main():
+    pygame.mixer.pre_init(44100, -16, 2, 4096)
+    pygame.init()
+    screen = pygame.display.set_mode(windowSize)
+    pygame.display.set_caption("Crazy World")
+
+    sound = Sound()
+    dashboard = Dashboard(screen=screen)
+
+    menu_level = make_menu_level(screen, sound, dashboard)
+    menu = Menu(screen, dashboard, menu_level, sound)
+    dashboard.state = "menu"
+
+    while not menu.start:
+        menu.update()
+
+    sound.music_channel.stop()
+
+    game_over_screen = GameOverScreen(screen)
+    victory_screen = VictoryScreen(screen, dashboard)
+
+    current_phase = 0
+
+    while True:
+        result = run_phase(
+            screen, sound, dashboard,
+            PHASES[current_phase],
+            PHASE_NAMES[current_phase],
+        )
+
+        if result == "next":
+            current_phase += 1
+            if current_phase >= len(PHASES):
+                victory_screen.show()
+                current_phase = 0
+                _back_to_menu(screen, sound, dashboard, menu)
+
+        elif result == "restart":
+            game_over_screen.show()
+
+        elif result == "menu":
+            current_phase = 0
+            _back_to_menu(screen, sound, dashboard, menu)
+
+
+def _back_to_menu(screen, sound, dashboard, menu):
+    dashboard.state = "menu"
+    dashboard.points = 0
+    dashboard.time = 0
+    dashboard.ticks = 0
+    menu.level = make_menu_level(screen, sound, dashboard)
+    menu.start = False
+    while not menu.start:
+        menu.update()
+    sound.music_channel.stop()
 
 
 if __name__ == "__main__":
-    exitmessage = 'restart'
-    while exitmessage == 'restart':
-        exitmessage = main()
+    main()

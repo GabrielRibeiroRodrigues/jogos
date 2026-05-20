@@ -17,6 +17,16 @@ class EntityBase(object):
         self.type = ""
         self.onGround = False
         self.obeyGravity = True
+        self.hp = 1
+        self.max_hp = 1
+        self.hit_stun = 0
+        self.knockback_vel = 0
+
+    def on_hit(self, direction):
+        """direction: 1=right, -1=left (knockback vai nessa direção)"""
+        self.hp -= 1
+        self.hit_stun = 20
+        self.knockback_vel = direction * 4
         
     def applyGravity(self):
         if self.obeyGravity:

@@ -5,8 +5,6 @@ import sys
 
 class Input:
     def __init__(self, entity):
-        self.mouseX = 0
-        self.mouseY = 0
         self.entity = entity
 
     def checkForInput(self):
@@ -31,21 +29,12 @@ class Input:
         self.entity.traits['goTrait'].boost = pressedKeys[K_LSHIFT]
 
     def checkForMouseInput(self, events):
-        mouseX, mouseY = pygame.mouse.get_pos()
-        if self.isRightMouseButtonPressed(events):
-            self.entity.levelObj.addKoopa(
-                mouseY / 32, mouseX / 32 - self.entity.camera.pos.x
-            )
-            self.entity.levelObj.addGoomba(
-                mouseY / 32, mouseX / 32 - self.entity.camera.pos.x
-            )
-            self.entity.levelObj.addRedMushroom(
-                mouseY / 32, mouseX / 32 - self.entity.camera.pos.x
-            )
-        if self.isLeftMouseButtonPressed(events):
-            self.entity.levelObj.addCoin(
-                mouseX / 32 - self.entity.camera.pos.x, mouseY / 32
-            )
+        for event in events:
+            if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                if self.entity.powerup_active:
+                    self.entity.fireProjectile()
+                else:
+                    self.entity.meleeTrait.trigger()
 
     def checkForQuitAndRestartInputEvents(self, events):
         for event in events:
@@ -56,12 +45,6 @@ class Input:
                 (event.key == pygame.K_ESCAPE or event.key == pygame.K_F5):
                 self.entity.pause = True
                 self.entity.pauseObj.createBackgroundBlur()
-
-    def isLeftMouseButtonPressed(self, events):
-        return self.checkMouse(events, 1)
-
-    def isRightMouseButtonPressed(self, events):
-        return self.checkMouse(events, 3)
 
     def checkMouse(self, events, button):
         for e in events:
