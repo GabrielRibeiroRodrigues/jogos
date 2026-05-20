@@ -1,23 +1,19 @@
 import pygame
 
-from classes.Animation import Animation
 from classes.Collider import Collider
-from classes.EntityCollider import EntityCollider
 from classes.Maths import Vec2D
 from entities.EntityBase import EntityBase
 from traits.leftrightwalk import LeftRightWalkTrait
+
+COLOR_FULL   = (180, 40,  40)   # dark red, full HP
+COLOR_DAMAGE = (220, 120, 40)   # orange, damaged
+COLOR_DEAD   = (120, 30,  30)
+COLOR_HIT    = (255, 180, 100)
 
 
 class HeavyBot(EntityBase):
     def __init__(self, screen, spriteColl, x, y, level, sound, dashboard):
         super().__init__(x, y - 1, 1.25)
-        self.spriteCollection = spriteColl
-        self.animation = Animation(
-            [
-                self.spriteCollection.get("heavybot-1").image,
-                self.spriteCollection.get("heavybot-2").image,
-            ]
-        )
         self.screen = screen
         self.leftrightTrait = LeftRightWalkTrait(self, level)
         self.collision = Collider(self, level)
@@ -51,26 +47,24 @@ class HeavyBot(EntityBase):
                 self.textPos = Vec2D(self.rect.x + 3, self.rect.y)
                 self.dashboard.points += 200
             if (self.hit_stun // 4) % 2 == 0:
-                self._draw(camera)
+                self._draw(camera, COLOR_HIT)
             return
 
         self.leftrightTrait.update()
-        self._draw(camera)
-        self.animation.update()
+        self._draw(camera, COLOR_FULL if self.hp >= 2 else COLOR_DAMAGE)
 
-    def _draw(self, camera):
-        key = "heavybot-1" if self.hp >= 2 else "heavybot-damaged"
-        frame = self.spriteCollection.get(key).image
-        if self.leftrightTrait.direction == -1:
-            frame = pygame.transform.flip(frame, True, False)
-        self.screen.blit(frame, (self.rect.x + camera.x, self.rect.y - 32))
+    def _draw(self, camera, color):
+        # HeavyBot is taller: draw 32×48 block
+        pygame.draw.rect(
+            self.screen, color,
+            (self.rect.x + camera.x, self.rect.y - 16, self.rect.width, self.rect.height + 16)
+        )
 
     def _onDead(self, camera):
         if self.timer < self.timeAfterDeath:
             self.textPos.y -= 0.5
             self.dashboard.drawText("200", self.textPos.x + camera.x, self.textPos.y, 8)
-            frame = self.spriteCollection.get("heavybot-damaged").image
-            self.screen.blit(frame, (self.rect.x + camera.x, self.rect.y - 32))
+            self._draw(camera, COLOR_DEAD)
         else:
             self.alive = None
         self.timer += 0.1

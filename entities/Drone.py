@@ -1,24 +1,18 @@
 import pygame
-from pygame.transform import flip
 
-from classes.Animation import Animation
 from classes.Collider import Collider
-from classes.EntityCollider import EntityCollider
 from classes.Maths import Vec2D
 from entities.EntityBase import EntityBase
 from traits.leftrightwalk import LeftRightWalkTrait
+
+COLOR       = (220, 60,  60)   # red
+COLOR_DEAD  = (160, 40,  40)
+COLOR_HIT   = (255, 160, 160)
 
 
 class Drone(EntityBase):
     def __init__(self, screen, spriteColl, x, y, level, sound, dashboard):
         super().__init__(x, y - 1, 1.25)
-        self.spriteCollection = spriteColl
-        self.animation = Animation(
-            [
-                self.spriteCollection.get("drone-1").image,
-                self.spriteCollection.get("drone-2").image,
-            ]
-        )
         self.screen = screen
         self.leftrightTrait = LeftRightWalkTrait(self, level)
         self.collision = Collider(self, level)
@@ -52,27 +46,23 @@ class Drone(EntityBase):
                 self.textPos = Vec2D(self.rect.x + 3, self.rect.y)
                 self.dashboard.points += 100
             if (self.hit_stun // 4) % 2 == 0:
-                self._draw(camera)
+                self._draw(camera, COLOR_HIT)
             return
 
         self.leftrightTrait.update()
-        self._draw(camera)
-        self.animation.update()
+        self._draw(camera, COLOR)
 
-    def _draw(self, camera):
-        frame = self.animation.image
-        if self.leftrightTrait.direction == -1:
-            frame = flip(frame, True, False)
-        self.screen.blit(frame, (self.rect.x + camera.x - 16, self.rect.y - 32))
+    def _draw(self, camera, color):
+        pygame.draw.rect(
+            self.screen, color,
+            (self.rect.x + camera.x, self.rect.y, self.rect.width, self.rect.height)
+        )
 
     def _onDead(self, camera):
         if self.timer < self.timeAfterDeath:
             self.textPos.y -= 0.5
             self.dashboard.drawText("100", self.textPos.x + camera.x, self.textPos.y, 8)
-            self.screen.blit(
-                self.spriteCollection.get("drone-flat").image,
-                (self.rect.x + camera.x - 16, self.rect.y - 32),
-            )
+            self._draw(camera, COLOR_DEAD)
         else:
             self.alive = None
         self.timer += 0.1
