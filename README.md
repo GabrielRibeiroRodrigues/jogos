@@ -1,25 +1,43 @@
-# Crazy World — Platformer in Python
+# Crazy World — Platformer em Python
 
-A custom 2D platformer built with Pygame featuring original characters (Yasmin, Bruno, Tiago).
+Jogo de plataforma 2D feito com Pygame. A jogadora é **Yasmin**, que deve atravessar três fases cheias de plataformas móveis e inimigos robóticos para chegar ao portal de saída.
 
-## Running
+## Como jogar
 
-* $ pip install -r requirements.txt
-* $ python main.py
+```
+pip install -r requirements.txt
+python main.py
+```
 
-## Standalone windows build
+## Controles
 
-* $ pip install py2exe
-* $ python compile.py py2exe
+| Tecla | Ação |
+|-------|------|
+| ← → | Mover |
+| Espaço | Pular (duplo pulo no ar) |
+| Shift | Dash |
+| Clique esquerdo | Ataque corpo a corpo |
+| Clique direito | Atirar projétil (requer power-up) |
 
-## Controls
+## Fases
 
-* Left: Move left  
-* Right: Move right  
-* Space: Jump  
-* Shift: Boost   
-* Left/Right Mouseclick: secret   
+| Fase | Dificuldade | Plataformas |
+|------|-------------|-------------|
+| 1 | Fácil | Baixas, lentas |
+| 2 | Médio | Médias, mais velozes |
+| 3 | Difícil | Altas, velozes |
 
-## Dependencies
-* pygame
-* scipy
+## Inimigos
+
+- **Drone** — inimigo leve, 1 HP, dá 100 pontos
+- **HeavyBot** — inimigo pesado, 2 HP, muda de sprite ao levar dano, dá 200 pontos
+
+## Power-up
+
+Colete o **WeaponPowerup** (caixa amarela `?`) para habilitar o disparo de projéteis por tempo limitado.
+
+## Dependências
+
+```
+pygame
+```

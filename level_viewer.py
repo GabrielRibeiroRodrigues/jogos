@@ -13,7 +13,7 @@ C_ABYSS     = (15, 10, 20)     # void / death
 C_PLATFORM  = (80, 160, 80)    # elevated solid tile
 C_MPLATFORM = (60, 120, 220)   # moving platform (start pos)
 C_PORTAL    = (80, 255, 130)   # end portal
-C_ENEMY     = (220, 60, 60)    # goomba / koopa
+C_ENEMY     = (220, 60, 60)    # drone / heavybot
 C_COIN      = (255, 220, 50)   # coin / coinbox
 C_PLAYER    = (200, 80, 220)   # player start
 C_CAM_EDGE  = (255, 150, 0)    # camera right limit line
@@ -100,7 +100,7 @@ def render_level(name):
         d.rectangle([ex*TILE, ey*TILE, ex*TILE+TILE*2-1, (ey+2)*TILE-1], fill=C_PORTAL)
 
     # Enemies
-    for ex, ey in entities.get("Goomba", []) + entities.get("Koopa", []):
+    for ex, ey in entities.get("Drone", []) + entities.get("HeavyBot", []):
         d.ellipse([ex*TILE+1, ey*TILE+1, ex*TILE+TILE-2, ey*TILE+TILE-2], fill=C_ENEMY)
 
     # Coins / CoinBoxes
