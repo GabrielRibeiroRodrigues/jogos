@@ -27,7 +27,9 @@
       "Bash(py *)",
       "PowerShell(py *)",
       "Bash(Get-ChildItem -Recurse -Path \"C:\\\\Users\\\\12265587630\\\\super-mario-python\" -Include \"*Mario*\" -ErrorAction SilentlyContinue)",
-      "Bash(Select-Object FullName)"
+      "Bash(Select-Object FullName)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

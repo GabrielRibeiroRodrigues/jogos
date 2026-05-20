@@ -68,8 +68,10 @@ def main():
     menu = Menu(screen, dashboard, menu_level, sound)
     dashboard.state = "menu"
 
+    menu_clock = pygame.time.Clock()
     while not menu.start:
         menu.update()
+        menu_clock.tick(60)
 
     sound.music_channel.stop()
 
@@ -108,8 +110,10 @@ def _back_to_menu(screen, sound, dashboard, menu):
     dashboard.yasmin = None
     menu.level = make_menu_level(screen, sound, dashboard)
     menu.start = False
+    menu_clock = pygame.time.Clock()
     while not menu.start:
         menu.update()
+        menu_clock.tick(60)
     sound.music_channel.stop()
 
 

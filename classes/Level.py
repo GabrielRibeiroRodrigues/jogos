@@ -114,7 +114,7 @@ class Level:
                         player.rect.bottom = platform_top
                         player.vel.y = 0
                         player.onGround = True
-                        # Use the actual delta moved this frame, not vel (which may have flipped)
+                        player.on_moving_platform = True
                         player.rect.x += platform.delta_x
                         player.rect.y += platform.delta_y
 

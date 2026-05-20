@@ -29,8 +29,11 @@ class Collider:
                             self.entity.vel.x = 0
 
     def checkY(self):
-        self.entity.onGround = False
-        
+        # Preserve onGround if a moving platform set it this frame
+        if not getattr(self.entity, 'on_moving_platform', False):
+            self.entity.onGround = False
+        self.entity.on_moving_platform = False
+
         try:
             rows = [
                 self.level[self.entity.getPosIndex().y],
@@ -54,8 +57,8 @@ class Collider:
                             self.entity.vel.y = 0
                             # reset jump on bottom
                             if self.entity.traits is not None:
-                                if "JumpTrait" in self.entity.traits:
-                                    self.entity.traits["JumpTrait"].reset()
+                                if "jumpTrait" in self.entity.traits:
+                                    self.entity.traits["jumpTrait"].reset()
                                 if "bounceTrait" in self.entity.traits:
                                     self.entity.traits["bounceTrait"].reset()
                         if self.entity.vel.y < 0:
